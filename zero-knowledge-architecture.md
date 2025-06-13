@@ -15,6 +15,17 @@ NeuralLog's zero-knowledge architecture is fundamentally different:
 
 This means that even if our entire infrastructure were compromised, attackers would gain access to nothing of value - just encrypted data and meaningless tokens.
 
+## The TypeScript Client SDK: The Cornerstone of Zero-Knowledge
+
+At the heart of NeuralLog's zero-knowledge architecture is our TypeScript Client SDK:
+
+1. **Complete Client-Side Cryptography**: All encryption, decryption, and key management happens exclusively in the client SDK
+2. **No Server-Side Secrets**: Passwords and master secrets never leave the client
+3. **Deterministic Key Derivation**: All encryption keys are derived client-side from API keys or master secrets
+4. **Searchable Encryption**: The SDK generates search tokens that enable searching without revealing content
+
+This client-centric approach means that even if you gave away the "keys to the kingdom" (server infrastructure), an attacker would still be unable to read your logs without the proper API keys or master secrets.
+
 ## The Hierarchical Key System (H-Keys)
 
 At the heart of NeuralLog's security is our deterministic hierarchical key system:
@@ -117,10 +128,10 @@ NeuralLog enables AI-powered analysis without compromising security:
 
 NeuralLog integrates seamlessly with AI agent frameworks:
 
-1. SDK adapters for popular agent frameworks
-2. Zero-knowledge authentication for AI agents
-3. Granular permission controls for AI access
-4. Audit trails for all AI interactions
+1. SDK adapters for popular agent frameworks, all built on our TypeScript Client SDK
+2. Zero-knowledge authentication for AI agents, with all cryptographic operations happening client-side
+3. Granular permission controls for AI access, without compromising the zero-knowledge architecture
+4. Audit trails for all AI interactions, while maintaining end-to-end encryption
 
 ## Why Zero-Knowledge Matters
 
@@ -136,14 +147,17 @@ NeuralLog's zero-knowledge architecture provides several critical benefits:
 
 Whether you choose NeuralLog Cloud or self-hosted NeuralLog, you get the same zero-knowledge security guarantees:
 
-1. **Same Client-Side Encryption**: All encryption happens on your systems
-2. **Same Zero-Knowledge Protocols**: Identical security architecture in both models
-3. **Same SDK Implementation**: The same secure client libraries power both options
+1. **Same Client-Side Encryption**: All encryption happens on your systems through our TypeScript Client SDK
+2. **Same Zero-Knowledge Protocols**: Identical security architecture in both models, with the client SDK as the cornerstone
+3. **Same SDK Implementation**: The same secure client libraries power both options, ensuring consistent security
+4. **No Trust Required**: Because the TypeScript Client SDK handles all cryptographic operations, you don't need to trust our infrastructure
 
-The primary differences are in operational aspects (management, scaling, updates) rather than security fundamentals.
+The primary differences are in operational aspects (management, scaling, updates) rather than security fundamentals. In both cases, the TypeScript Client SDK ensures that your data remains secure and private.
 
 ## Conclusion
 
 NeuralLog's zero-knowledge architecture represents a fundamental shift in logging and telemetry security. By ensuring that sensitive data is never exposed to our systems, we provide unprecedented security and privacy while still enabling powerful search, analysis, and AI integration capabilities.
 
-This approach eliminates an entire class of security risks and gives you complete control over your sensitive data.
+At the core of this architecture is our TypeScript Client SDK, which handles all cryptographic operations client-side. This cornerstone component ensures that sensitive data and encryption keys never leave your systems, giving you complete control over your data.
+
+This approach eliminates an entire class of security risks and provides a level of security that traditional logging systems simply cannot match. With NeuralLog, you can confidently log sensitive data knowing that even if our entire infrastructure were compromised, your data would remain secure.
